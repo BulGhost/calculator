@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3EC7E35-639C-4138-8805-15EB054AB895}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Foxminded.Calculator</RootNamespace>
-    <AssemblyName>Foxminded.Calculator</AssemblyName>
+    <ProjectGuid>{7B234AB1-E1D2-4D88-B6BB-2B3B851B4CD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Foxminded.CalculationLibrary</RootNamespace>
+    <AssemblyName>Foxminded.CalculationLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,30 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorException.cs" />
-    <Compile Include="InputOutput.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ShuntingYardParser\CalculatorException.cs" />
+    <Compile Include="ShuntingYardParser\IParser.cs" />
+    <Compile Include="Writter\FileWritter.cs" />
+    <Compile Include="Computing.cs" />
+    <Compile Include="Reader\FileReader.cs" />
+    <Compile Include="Writter\IWritter.cs" />
+    <Compile Include="Reader\IReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextResourses\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="ShuntingYardParser\Operator.cs" />
+    <Compile Include="ShuntingYardParser\Token.cs" />
+    <Compile Include="ShuntingYardParser\Parser.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TextResourses\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Foxminded.CalculationLibrary\Foxminded.CalculationLibrary.csproj">
-      <Project>{7B234AB1-E1D2-4D88-B6BB-2B3B851B4CD9}</Project>
-      <Name>Foxminded.CalculationLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
