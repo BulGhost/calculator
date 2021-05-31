@@ -97,35 +97,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SpecifiedPath" xml:space="preserve">
-    <value>Specified file path: {0}</value>
-  </data>
-  <data name="InvalidFilePath" xml:space="preserve">
-    <value>File path is incorrect! </value>
-  </data>
-  <data name="IntriduceToEnterThePathToFile" xml:space="preserve">
-    <value>Specify the path to the file: (Press "Enter" to skip)
-</value>
-  </data>
-  <data name="RemainingAttempts" xml:space="preserve">
-    <value>{0} attempts remain.</value>
-  </data>
-  <data name="AttemptsExhausted" xml:space="preserve">
-    <value>Input attempts is exhausted.</value>
-  </data>
-  <data name="CauseOfError" xml:space="preserve">
-    <value>The user has exceeded the number of attempts to enter the file path.</value>
-  </data>
   <data name="Greeting" xml:space="preserve">
     <value>Test5 (Calculator) v{0}, 2021
 Written by Dmitriy Bulynko
 Calculate an arithmetic expressions.</value>
   </data>
-  <data name="IntroduceToEnterAnExpression" xml:space="preserve">
-    <value>Enter an expression for calculation:</value>
+  <data name="IntroduceToWorkInTheConsole" xml:space="preserve">
+    <value>Press "Y" to work in console mode or any other key to exit.</value>
   </data>
-  <data name="OfferToCalculateOneMoreExpresion" xml:space="preserve">
-    <value>Enter "Y" to calculate one more expression.</value>
+  <data name="IntroduceToEnterAnExpression" xml:space="preserve">
+    <value>Enter an expression for calculation (empty string to exit):</value>
+  </data>
+  <data name="InvalidFilePath" xml:space="preserve">
+    <value>Specified file path is incorrect!</value>
   </data>
   <data name="DevisionByZero" xml:space="preserve">
     <value>Error! Division by zero.</value>

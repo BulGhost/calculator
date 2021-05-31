@@ -61,24 +61,6 @@ namespace Foxminded.Calculator.TextResourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input attempts is exhausted..
-        /// </summary>
-        internal static string AttemptsExhausted {
-            get {
-                return ResourceManager.GetString("AttemptsExhausted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The user has exceeded the number of attempts to enter the file path..
-        /// </summary>
-        internal static string CauseOfError {
-            get {
-                return ResourceManager.GetString("CauseOfError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error! Division by zero..
         /// </summary>
         internal static string DevisionByZero {
@@ -108,17 +90,7 @@ namespace Foxminded.Calculator.TextResourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specify the path to the file: (Press &quot;Enter&quot; to skip)
-        ///.
-        /// </summary>
-        internal static string IntriduceToEnterThePathToFile {
-            get {
-                return ResourceManager.GetString("IntriduceToEnterThePathToFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter an expression for calculation:.
+        ///   Looks up a localized string similar to Enter an expression for calculation (empty string to exit):.
         /// </summary>
         internal static string IntroduceToEnterAnExpression {
             get {
@@ -127,38 +99,20 @@ namespace Foxminded.Calculator.TextResourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File path is incorrect! .
+        ///   Looks up a localized string similar to Press &quot;Y&quot; to work in console mode or any other key to exit..
+        /// </summary>
+        internal static string IntroduceToWorkInTheConsole {
+            get {
+                return ResourceManager.GetString("IntroduceToWorkInTheConsole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specified file path is incorrect!.
         /// </summary>
         internal static string InvalidFilePath {
             get {
                 return ResourceManager.GetString("InvalidFilePath", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter &quot;Y&quot; to calculate one more expression..
-        /// </summary>
-        internal static string OfferToCalculateOneMoreExpresion {
-            get {
-                return ResourceManager.GetString("OfferToCalculateOneMoreExpresion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} attempts remain..
-        /// </summary>
-        internal static string RemainingAttempts {
-            get {
-                return ResourceManager.GetString("RemainingAttempts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Specified file path: {0}.
-        /// </summary>
-        internal static string SpecifiedPath {
-            get {
-                return ResourceManager.GetString("SpecifiedPath", resourceCulture);
             }
         }
     }

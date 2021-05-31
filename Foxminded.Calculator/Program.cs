@@ -16,26 +16,29 @@ namespace Foxminded.Calculator
             Console.WriteLine(Resources.Greeting, Assembly.GetExecutingAssembly().GetName().Version);
             Console.WriteLine(new string('=', 60));
 
-            var inputOutput = new InputOutput();
-            string filePath;
+            string filePath = null;
             try
             {
-                filePath = inputOutput.GetFilePath(args);
+                if (args.Length != 0) filePath = new FilePathGetter().GetFilePath(args);
             }
-            catch (CalculatorException ex)
+            catch (CalculatorException)
             {
-                Console.WriteLine(ex.CauseOfError);
-                return;
+                Console.WriteLine(Resources.InvalidFilePath);
+                Console.WriteLine(Resources.IntroduceToWorkInTheConsole);
+                if (Console.ReadKey().Key != ConsoleKey.Y) return;
+
+                Console.CursorLeft = 0;
             }
 
             var computing = new Computing();
-
-            if (filePath == string.Empty)
+            if (filePath == null)
             {
                 do
                 {
                     Console.WriteLine(Resources.IntroduceToEnterAnExpression);
                     string expression = Console.ReadLine();
+                    if (expression == string.Empty) break;
+
                     double result;
                     try
                     {
@@ -53,7 +56,7 @@ namespace Foxminded.Calculator
                     }
 
                     Console.WriteLine(expression + @" = " + result);
-                } while (inputOutput.CalculateOneMoreExpresion());
+                } while (true);
 
                 return;
             }
@@ -86,7 +89,7 @@ namespace Foxminded.Calculator
                 }
             }
 
-            string pathForResultsFile = inputOutput.GetResultsFilePath(filePath);
+            string pathForResultsFile = new FilePathGetter().GetResultsFilePath(filePath);
             try
             {
                 IWritter writter = new FileWritter(pathForResultsFile);

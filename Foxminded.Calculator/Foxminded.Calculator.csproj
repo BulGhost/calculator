@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorException.cs" />
-    <Compile Include="InputOutput.cs" />
+    <Compile Include="FilePathGetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextResourses\Resources.Designer.cs">
