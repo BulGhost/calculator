@@ -2,7 +2,7 @@
 
 namespace Foxminded.CalculationLibrary.Tests
 {
-    internal class ComputingUnderTest : Computing
+    internal class CalculatorUnderTest : Calculator
     {
         protected override IParser CreateParser(char decimalSeparator)
         {

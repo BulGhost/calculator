@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Foxminded.Calculator.TextResourses {
+namespace Foxminded.CalculatorApp.TextResourses {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Foxminded.Calculator.TextResourses {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Foxminded.Calculator.TextResourses.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Foxminded.CalculatorApp.TextResourses.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

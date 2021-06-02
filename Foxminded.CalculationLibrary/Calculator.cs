@@ -5,7 +5,7 @@ using Foxminded.CalculationLibrary.ShuntingYardParser;
 
 namespace Foxminded.CalculationLibrary
 {
-    public class Computing
+    public class Calculator
     {
         private readonly NumberFormatInfo _numberFormat = new NumberFormatInfo {NumberDecimalSeparator = "."};
 

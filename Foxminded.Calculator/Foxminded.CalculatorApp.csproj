@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B3EC7E35-639C-4138-8805-15EB054AB895}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Foxminded.Calculator</RootNamespace>
-    <AssemblyName>Foxminded.Calculator</AssemblyName>
+    <RootNamespace>Foxminded.CalculatorApp</RootNamespace>
+    <AssemblyName>Foxminded.CalculatorApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorException.cs" />
+    <Compile Include="CalculatorAppException.cs" />
+    <Compile Include="CalculationStrategy\Context.cs" />
     <Compile Include="FilePathGetter.cs" />
+    <Compile Include="CalculationStrategy\ICalculationStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextResourses\Resources.Designer.cs">
@@ -52,6 +54,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="CalculationStrategy\CalculationInConsole.cs" />
+    <Compile Include="CalculationStrategy\CalculationFromFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,5 +72,6 @@
       <Name>Foxminded.CalculationLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

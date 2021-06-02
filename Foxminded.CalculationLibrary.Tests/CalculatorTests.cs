@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Foxminded.CalculationLibrary.Tests
 {
-    public class ComputingTests
+    public class CalculatorTests
     {
         [InlineData("1", 11.0)]
         [InlineData("2", 15.0)]
@@ -11,7 +11,7 @@ namespace Foxminded.CalculationLibrary.Tests
         [Theory]
         public void Calculate_ValidExpression_CalculatedResult(string expression, double expected)
         {
-            double actual = new ComputingUnderTest().Calculate(expression);
+            double actual = new CalculatorUnderTest().Calculate(expression);
 
             Assert.Equal(expected, actual, 3);
         }
@@ -19,7 +19,7 @@ namespace Foxminded.CalculationLibrary.Tests
         [Fact]
         public void Calculate_DivideByZero_DivideByZeroException()
         {
-            Assert.Throws<DivideByZeroException>(() => new Computing().Calculate("2/0"));
+            Assert.Throws<DivideByZeroException>(() => new Calculator().Calculate("2/0"));
         }
     }
 }

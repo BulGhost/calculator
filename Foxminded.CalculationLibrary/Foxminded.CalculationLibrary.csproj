@@ -44,7 +44,7 @@
     <Compile Include="ShuntingYardParser\CalculatorException.cs" />
     <Compile Include="ShuntingYardParser\IParser.cs" />
     <Compile Include="Writter\FileWritter.cs" />
-    <Compile Include="Computing.cs" />
+    <Compile Include="Calculator.cs" />
     <Compile Include="Reader\FileReader.cs" />
     <Compile Include="Writter\IWritter.cs" />
     <Compile Include="Reader\IReader.cs" />
