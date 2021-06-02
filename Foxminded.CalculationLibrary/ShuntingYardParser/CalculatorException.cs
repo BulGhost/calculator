@@ -4,7 +4,6 @@ namespace Foxminded.CalculationLibrary.ShuntingYardParser
 {
     public class CalculationLibraryException : Exception
     {
-        public DateTime ErrorTimeStamp { get; set; }
         public string CauseOfError { get; set; }
 
         public CalculationLibraryException()
@@ -16,11 +15,10 @@ namespace Foxminded.CalculationLibrary.ShuntingYardParser
         {
         }
 
-        public CalculationLibraryException(string message, string cause, DateTime time)
+        public CalculationLibraryException(string message, string cause)
             : base(message)
         {
             CauseOfError = cause;
-            ErrorTimeStamp = time;
         }
     }
 }

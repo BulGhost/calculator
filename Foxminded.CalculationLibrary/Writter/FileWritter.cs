@@ -12,7 +12,7 @@ namespace Foxminded.CalculationLibrary.Writter
             _path = pathForFile ?? throw new ArgumentNullException();
         }
 
-        public void WriteResultsIntoFile(string[] expressionsToCalculate, string[] calculatedResults)
+        public void WriteResults(string[] expressionsToCalculate, string[] calculatedResults)
         {
             if (expressionsToCalculate == null || calculatedResults == null) throw new ArgumentNullException();
 

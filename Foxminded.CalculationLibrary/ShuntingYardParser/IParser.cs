@@ -4,6 +4,6 @@ namespace Foxminded.CalculationLibrary.ShuntingYardParser
 {
     public interface IParser
     {
-        IEnumerable<string> GetTokensInReversePolishNotation(string expression);
+        ICollection<string> GetTokensInReversePolishNotation(string expression);
     }
 }

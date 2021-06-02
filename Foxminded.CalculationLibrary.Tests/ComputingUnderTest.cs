@@ -4,7 +4,7 @@ namespace Foxminded.CalculationLibrary.Tests
 {
     internal class ComputingUnderTest : Computing
     {
-        protected override IParser CreateParser()
+        protected override IParser CreateParser(char decimalSeparator)
         {
             return new StabParser();
         }

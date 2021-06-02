@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Reflection;
 using Foxminded.CalculationLibrary;
 using Foxminded.CalculationLibrary.Reader;
@@ -21,7 +22,7 @@ namespace Foxminded.Calculator
             {
                 if (args.Length != 0) filePath = new FilePathGetter().GetFilePath(args);
             }
-            catch (CalculatorException)
+            catch (FileNotFoundException)
             {
                 Console.WriteLine(Resources.InvalidFilePath);
                 Console.WriteLine(Resources.IntroduceToWorkInTheConsole);
@@ -93,7 +94,7 @@ namespace Foxminded.Calculator
             try
             {
                 IWritter writter = new FileWritter(pathForResultsFile);
-                writter.WriteResultsIntoFile(fileReader.Data, results);
+                writter.WriteResults(fileReader.Data, results);
                 Console.WriteLine(Resources.FileWithResults, pathForResultsFile);
             }
             catch (Exception ex)

@@ -8,7 +8,7 @@ namespace Foxminded.CalculationLibrary.Tests
 {
     public class ParserTests
     {
-        private readonly Parser _parser = new Parser();
+        private readonly Parser _parser = new Parser('.');
 
         public static IEnumerable<object[]> ExpressionsData =>
             new List<object[]>
@@ -42,9 +42,9 @@ namespace Foxminded.CalculationLibrary.Tests
         [Theory]
         [MemberData(nameof(ExpressionsData))]
         public void GetTokensInReversePolishNotation_ValidExpression_TokensEnumeration
-            (string expression, IEnumerable<string> rpnTokens)
+            (string expression, ICollection<string> rpnTokens)
         {
-            IEnumerable<string> tokens = _parser.GetTokensInReversePolishNotation(expression);
+            var tokens = _parser.GetTokensInReversePolishNotation(expression);
 
             tokens.Should().Equal(rpnTokens);
         }

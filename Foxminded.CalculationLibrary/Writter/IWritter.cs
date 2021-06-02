@@ -2,6 +2,6 @@
 {
     public interface IWritter
     {
-        void WriteResultsIntoFile(string[] expressionsToCalculate, string[] calculatedResults);
+        void WriteResults(string[] expressionsToCalculate, string[] calculatedResults);
     }
 }
