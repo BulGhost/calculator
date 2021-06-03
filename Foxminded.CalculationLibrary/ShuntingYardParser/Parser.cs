@@ -71,18 +71,19 @@ namespace Foxminded.CalculationLibrary.ShuntingYardParser
         private static void RemoveExtraSpaces(ref string expression)
         {
             expression = expression.Trim();
-            char[] charsAllowingSpacesBeside = { '+', '-', '*', '/', '(', ')' };
-            for (int i = 0; i < expression.Length; i++)
-                if (charsAllowingSpacesBeside.Contains(expression[i]))
-                {
-                    if (i != expression.Length - 1 && expression[i + 1] == ' ')
-                        expression = expression.Remove(i + 1, 1);
+            if (expression[expression.Length - 1] == '=')
+                expression = expression.Remove(expression.Length - 1, 1).TrimEnd();
 
-                    if (i != 0 && expression[i - 1] == ' ')
-                    {
-                        expression = expression.Remove(i - 1, 1);
-                        i--;
-                    }
+            char[] charsAllowingSpacesBeside = { '+', '-', '*', '/', '(', ')' };
+            for (int i = 1; i < expression.Length; i++)
+                if (expression[i] == ' ' || expression[i] == '\t')
+                {
+                    int j = 1;
+                    while (expression[i + j] == ' ' || expression[i + j] == '\t') j++;
+
+                    if (charsAllowingSpacesBeside.Contains(expression[i - 1]) ||
+                        charsAllowingSpacesBeside.Contains(expression[i + j]))
+                        expression = expression.Remove(i, j);
                 }
         }
 
@@ -159,13 +160,7 @@ namespace Foxminded.CalculationLibrary.ShuntingYardParser
 
         private bool OperatorOnTopOfTheStackIsMorePriority(string tokValue, Stack<string> stack)
         {
-            return stack.Any() && IsOperator(stack.Peek()) && CompareOperators(tokValue, stack.Peek());
-        }
-
-        private static bool IsOperator(string token)
-        {
-            return token == "+" || token == "-" ||
-                   token == "*" || token == "/" || token == "^";
+            return stack.Any() && _operators.ContainsKey(stack.Peek()) && CompareOperators(tokValue, stack.Peek());
         }
 
         private bool CompareOperators(string op1, string op2) =>

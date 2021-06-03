@@ -36,7 +36,7 @@ namespace Foxminded.CalculatorApp.CalculationStrategy
             WriteResultsInFile(pathForResultsFile, fileReader.Data, results);
         }
 
-        private static string[] GetResultsOfEachExpression(IReader fileReader, Calculator calculator)
+        private string[] GetResultsOfEachExpression(IReader fileReader, Calculator calculator)
         {
             var results = new string[fileReader.Data.Length];
             for (int i = 0; i < fileReader.Data.Length; i++)

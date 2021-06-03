@@ -81,7 +81,8 @@ namespace Foxminded.CalculatorApp.TextResourses {
         /// <summary>
         ///   Looks up a localized string similar to Test5 (Calculator) v{0}, 2021
         ///Written by Dmitriy Bulynko
-        ///Calculate an arithmetic expressions..
+        ///Calculate an arithmetic expressions.
+        ///You can use this app to calculate expressions in text files..
         /// </summary>
         internal static string Greeting {
             get {

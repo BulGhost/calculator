@@ -31,8 +31,21 @@ namespace Foxminded.CalculatorApp.CalculationStrategy
                     continue;
                 }
 
-                Console.WriteLine(expression + @" = " + result);
+                PrintResults(expression, result);
             } while (true);
+        }
+
+        private static void PrintResults(string expression, double result)
+        {
+            if (expression.Contains("="))
+            {
+                Console.CursorTop--;
+                Console.WriteLine(expression + @" " + result);
+            }
+            else
+            {
+                Console.WriteLine(expression + @" = " + result);
+            }
         }
     }
 }
