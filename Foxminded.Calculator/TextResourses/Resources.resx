@@ -98,13 +98,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Greeting" xml:space="preserve">
-    <value>Test5 (Calculator) v{0}, 2021
+    <value>Calculator v{0}, 2021
 Written by Dmitriy Bulynko
 Calculate an arithmetic expressions.
 You can use this app to calculate expressions in text files.</value>
-  </data>
-  <data name="IntroduceToWorkInTheConsole" xml:space="preserve">
-    <value>Press "Y" to work in console mode or any other key to exit.</value>
   </data>
   <data name="IntroduceToEnterAnExpression" xml:space="preserve">
     <value>Enter an expression for calculation (empty string to exit):</value>

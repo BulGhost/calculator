@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using Foxminded.CalculationLibrary;
 using Foxminded.CalculationLibrary.Reader;
 using Foxminded.CalculationLibrary.ShuntingYardParser;
@@ -14,7 +15,9 @@ namespace Foxminded.CalculatorApp.CalculationStrategy
 
         public CalculationFromFile(string filePath)
         {
-            _filePath = filePath ?? throw new ArgumentNullException();
+            if (!File.Exists(filePath)) throw new FileNotFoundException();
+
+            _filePath = filePath;
         }
 
         public void CalculateExpressions(Calculator calculator)

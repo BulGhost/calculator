@@ -1,26 +1,26 @@
 ﻿using System;
-using System.Reflection;
 using Foxminded.CalculationLibrary;
 using Foxminded.CalculatorApp.CalculationStrategy;
-using Foxminded.CalculatorApp.TextResourses;
+using CommandLine;
 
 namespace Foxminded.CalculatorApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            Console.WriteLine(Resources.Greeting, Assembly.GetExecutingAssembly().GetName().Version);
-            Console.WriteLine(new string('=', 60));
+            var progOptions = new ProgramOptions();
+            var result = Parser.Default.ParseArguments<ProgramOptions>(args)
+                .WithParsed(options => progOptions = options);
+            if (result.Tag != ParserResultType.Parsed) return -1;
 
-            string filePath = new FilePathGetter().GetFilePath(args);
+            new StrategySelector().ChooseCalculationStrategy(progOptions, out var calculationStrategy);
+            if (calculationStrategy == null) return -1;
 
-            var calculationStrategy = filePath == null
-                ? (ICalculationStrategy) new CalculationInConsole()
-                : new CalculationFromFile(filePath);
             var context = new Context(calculationStrategy);
-
             context.RunCalculator(new Calculator());
+
+            return 0;
         }
     }
 }

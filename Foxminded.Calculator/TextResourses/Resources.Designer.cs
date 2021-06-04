@@ -79,7 +79,7 @@ namespace Foxminded.CalculatorApp.TextResourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Test5 (Calculator) v{0}, 2021
+        ///   Looks up a localized string similar to Calculator v{0}, 2021
         ///Written by Dmitriy Bulynko
         ///Calculate an arithmetic expressions.
         ///You can use this app to calculate expressions in text files..
@@ -96,15 +96,6 @@ namespace Foxminded.CalculatorApp.TextResourses {
         internal static string IntroduceToEnterAnExpression {
             get {
                 return ResourceManager.GetString("IntroduceToEnterAnExpression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Press &quot;Y&quot; to work in console mode or any other key to exit..
-        /// </summary>
-        internal static string IntroduceToWorkInTheConsole {
-            get {
-                return ResourceManager.GetString("IntroduceToWorkInTheConsole", resourceCulture);
             }
         }
         
