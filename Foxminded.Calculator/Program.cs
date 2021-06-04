@@ -18,8 +18,17 @@ namespace Foxminded.CalculatorApp
             if (calculationStrategy == null) return -1;
 
             var context = new Context(calculationStrategy);
-            context.RunCalculator(new Calculator());
+            try
+            {
+                context.RunCalculator(new Calculator());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -2;
+            }
 
+            context.RunCalculator(new Calculator());
             return 0;
         }
     }

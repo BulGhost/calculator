@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculationStrategy\StrategySelector.cs" />
-    <Compile Include="CalculatorAppException.cs" />
     <Compile Include="CalculationStrategy\Context.cs" />
     <Compile Include="FilePathGetter.cs" />
     <Compile Include="CalculationStrategy\ICalculationStrategy.cs" />
